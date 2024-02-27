@@ -60,6 +60,9 @@ that has specific information (in this case, AWS sageMaker's documentation or in
 base, and the extra LLM layer will help your solution to get human-like responses, giving the user a sense 
 of a conversational experience.  
 
+Here you can see a very general diagram of the proposed solution flow:
+
+![LokaAssistantDiagram drawio](https://github.com/EduCasM/lokaChatbot/assets/53205307/4b1afbbd-9cb1-41ce-bd1f-0b208ef6f3b9)
 
 
   
