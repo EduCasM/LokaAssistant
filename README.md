@@ -21,12 +21,12 @@ request is a nice-to-have and not a mandatory feature. They can accept this bein
 The documentation provided for the POC is public (it’s AWS documentation) and as such has no limitations on usage.
 However, the final system will also handle internal documentation that contains sensitive
 information that has proprietary (can’t be shared or accessed externally) and geographical restrictions
-(can’t leave the US).
+(can’t leave the US).  
 They also provided some example questions they would like the system to be able to respond to for
-the POC:
-• What is SageMaker?
-• What are all AWS regions where SageMaker is available?
-• How to check if an endpoint is KMS encrypted?
+the POC:  
+• What is SageMaker?  
+• What are all AWS regions where SageMaker is available?  
+• How to check if an endpoint is KMS encrypted?  
 • What are SageMaker's Geospatial capabilities?  
 
 My task is to design the overall solution for Company X. Determine what parts of that solution
@@ -43,7 +43,7 @@ by adding an extra layer of ML models to incorporate contextual and semantic und
 These are some of the benefits of using this service for the proposed solution:  
 * Amazon Kendra is easy to learn and use.
 * By using AWS crawlers you can directly retrieve the context information from the source, in this case,
-  the [AWS SageMaker documentation web page]([https://link-url-here.org](https://docs.aws.amazon.com/sagemaker/)https://docs.aws.amazon.com/sagemaker/),
+  the [AWS SageMaker documentation web page](https://docs.aws.amazon.com/sagemaker/),
   this is way better than manually getting the updated .md files every time there is a change on the documentation.
 * Amazon Kendra uses machine learning to improve search results on your indexed data.
 * Amazon Kendra is as secure as any other AWS cloud service, so you should not worry too much about
