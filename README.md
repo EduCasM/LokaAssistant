@@ -32,13 +32,17 @@ the POC:
 My task is to design the overall solution for Company X. Determine what parts of that solution
 should be part of the POC and begin implementing the POC.  
 
-## Proposed solution Introduction
+## Proposed Solution Overview 
 Since Loka's team has a preference for AWS services, the proposed solution will primarily consider 
-using AWS services.   
+using AWS services.  
 
-One of the central AWS services considered in the proposed solution will be Amazon Kendra; Amazon Kendra is 
-an Intelligent search service powered by machine learning, it goes beyond the traditional key-word search method
+For convenience, I will give a name to my proposed solution: **Loka Assistant** is the way I will refer 
+to it throughout this repository.  
+
+One of the central AWS services considered for the Loka assistant will be *Amazon Kendra*; [Amazon Kendra](https://aws.amazon.com/kendra/features/#product-features#kendra-features#intelligent-search) is 
+an Intelligent search service powered by machine learning. It goes beyond the traditional keyword search method
 by adding an extra layer of ML models to incorporate contextual and semantic understanding.  
+
 
 These are some of the benefits of using this service for the proposed solution:  
 * Amazon Kendra is easy to learn and use.
@@ -47,7 +51,15 @@ These are some of the benefits of using this service for the proposed solution:
   this is way better than manually getting the updated .md files every time there is a change on the documentation.
 * Amazon Kendra uses machine learning to improve search results on your indexed data.
 * Amazon Kendra is as secure as any other AWS cloud service, so you should not worry too much about
-  using your enterprise data or documentation as input for this service.
+  using your enterprise data or documentation as input for this service.  
+
+Another important aspect of the proposed solution would be to use the Retrieval Augmented Generation (RAG)
+technique. The RAG technique combines retrieval methods (such as the ones used by Amazon Kendra) with LLMs
+to get more suitable and context-aware outputs. By using the RAG technique you can build a chatbot-like interface 
+that has specific information (in this case, AWS sageMaker's documentation or internal documentation) as the knowledge 
+base, and the extra LLM layer will help your solution to get human-like responses, giving the user a sense 
+of a conversational experience.  
+
 
 
   
