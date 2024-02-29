@@ -62,8 +62,22 @@ of a conversational experience.
 
 Here you can see a very general diagram of the proposed solution flow:
 
-![LokaAssistantDiagram drawio](https://github.com/EduCasM/lokaChatbot/assets/53205307/4b1afbbd-9cb1-41ce-bd1f-0b208ef6f3b9)
+![LokaAssistantDiagram drawio](https://github.com/EduCasM/lokaChatbot/assets/53205307/4b1afbbd-9cb1-41ce-bd1f-0b208ef6f3b9)  
 
+Another important consideration for this solution would be the *selection of the most suitable LLM* for this 
+specific use case.
+The options available for easy integration with AWS services  would be:  
+* LLM hosted by AWS SageMaker; if needed we could host the LLM directly on an AWS endpoint, the options
+  directly available are: Hugging Face, AI21 Labs, Cohere, Meta, and some others.  
+* LLM compatible with the LangChain framework; Using the LangChain framework we could access models
+  such as OpenAI, BedRock, and Anthropic.
+
+## Limitations  
+
+LLMs have limitations around the maximum word count for the input prompt, therefore choosing the right passages among
+thousands or millions of documents in the enterprise, has a direct impact on the LLM’s accuracy.  
+In designing effective RAG, content retrieval is a critical step to ensure the LLM receives the most relevant and
+concise context from enterprise content to generate accurate responses
 
   
 
