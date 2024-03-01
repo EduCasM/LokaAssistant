@@ -78,7 +78,7 @@ Different LLMs have different strengths, some are more accurate than others, how
 processing time, so we would need to define a custom metric to evaluate the different models and determine 
 which one is better for our specific use case. 
 
-My suggestion would be to try [different LLMs models](https://www.mercity.ai/blog-post/comprehensive-comparison-of-llms-8-2023) 
+My suggestion for a robust solution would be to try [different LLMs models](https://www.mercity.ai/blog-post/comprehensive-comparison-of-llms-8-2023) 
 and understand the pros and cons of the  [different available options](https://medium.com/@jorgetorresai/navigating-the-llm-landscape-a-comparative-analysis-of-leading-large-language-models-ce3f3d8d66cd)  
 
 ![image](https://github.com/EduCasM/LokaAssistant/assets/53205307/28a52884-31b9-4386-8ade-f17919f1e9a8)  
