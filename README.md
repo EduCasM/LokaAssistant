@@ -70,7 +70,22 @@ The options available for easy integration with AWS services  would be:
 * LLM hosted by AWS SageMaker; if needed we could host the LLM directly on an AWS endpoint, the options
   directly available are: Hugging Face, AI21 Labs, Cohere, Meta, and some others.  
 * LLM compatible with the LangChain framework; Using the LangChain framework we could access models
-  such as OpenAI, BedRock, and Anthropic.
+  such as OpenAI, BedRock, and Anthropic.  
+
+## LLMs for this Solution
+
+Different LLMs have different strengths, some are more accurate than others, however, some might have a faster 
+processing time, so we would need to define a custom metric to evaluate the different models and determine 
+Which one is better for our specific use case. 
+
+My suggestion would be to try [different LLMs models](https://www.mercity.ai/blog-post/comprehensive-comparison-of-llms-8-2023) 
+and understand the pros and cons of the  [different available options](https://medium.com/@jorgetorresai/navigating-the-llm-landscape-a-comparative-analysis-of-leading-large-language-models-ce3f3d8d66cd)  
+
+![image](https://github.com/EduCasM/LokaAssistant/assets/53205307/28a52884-31b9-4386-8ade-f17919f1e9a8)  
+
+My suggestion would be to start by trying OpenAI models, which are directly available through the 
+[Langchain](https://www.langchain.com/) framework.  
+
 
 ## Limitations  
 
