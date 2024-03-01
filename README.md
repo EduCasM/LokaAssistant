@@ -95,8 +95,11 @@ the LLM receives the most relevant and concise context from enterprise content t
 
 - There is the possibility of this project being expanded to consider some other knowledge bases, besides the AWS
 SageMaker documentation and these other possible knowledge bases consist of private enterprise documentation. So if we want
-to keep this information secure, we would need to consider only LLMs that are directly hosted in AWS, so that the delicate
+to keep this information secure, we would need to consider only LLMs that are directly hosted in AWS, so that the delicate  
 enterprise documentation never leaves the secure AWS ecosystem.
+
+## License
+This repository and the [repository](https://github.com/aws-samples) from which we took some template files are licensed under the [MIT-0 License](https://github.com/aws/mit-0). 
 
 
   
