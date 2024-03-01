@@ -2,24 +2,14 @@ import streamlit as st
 import uuid
 import sys
 
-import kendra_chat_anthropic as anthropic
-import kendra_chat_open_ai as openai
-import kendra_chat_falcon_40b as falcon40b
-import kendra_chat_llama_2 as llama2
-import kendra_chat_bedrock_titan as bedrock_titan
-import kendra_chat_bedrock_claude as bedrock_claude
-import kendra_chat_bedrock_claudev2 as bedrock_claudev2
-
+import langchain_chat_open_ai as openai
 
 
 USER_ICON = "images/user-icon.png"
 AI_ICON = "images/ai-icon.png"
 MAX_HISTORY_LENGTH = 5
 PROVIDER_MAP = {
-    'openai': 'Open AI',
-    'anthropic': 'Anthropic',
-    'falcon40b': 'Falcon 40B',
-    'llama2' : 'Llama 2'
+    'openai': 'Open AI'
 }
 
 #function to read a properties file and create environment variables
@@ -45,31 +35,13 @@ else:
 
 if 'llm_chain' not in st.session_state:
     if (len(sys.argv) > 1):
-        if (sys.argv[1] == 'anthropic'):
-            st.session_state['llm_app'] = anthropic
-            st.session_state['llm_chain'] = anthropic.build_chain()
-        elif (sys.argv[1] == 'openai'):
+        if (sys.argv[1] == 'openai'):
             st.session_state['llm_app'] = openai
             st.session_state['llm_chain'] = openai.build_chain()
-        elif (sys.argv[1] == 'falcon40b'):
-            st.session_state['llm_app'] = falcon40b
-            st.session_state['llm_chain'] = falcon40b.build_chain()
-        elif (sys.argv[1] == 'llama2'):
-            st.session_state['llm_app'] = llama2
-            st.session_state['llm_chain'] = llama2.build_chain()
-        elif (sys.argv[1] == 'bedrock_titan'):
-            st.session_state['llm_app'] = bedrock_titan
-            st.session_state['llm_chain'] = bedrock_titan.build_chain()
-        elif (sys.argv[1] == 'bedrock_claude'):
-            st.session_state['llm_app'] = bedrock_claude
-            st.session_state['llm_chain'] = bedrock_claude.build_chain()
-        elif (sys.argv[1] == 'bedrock_claudev2'):
-            st.session_state['llm_app'] = bedrock_claudev2
-            st.session_state['llm_chain'] = bedrock_claudev2.build_chain()
         else:
-            raise Exception("Unsupported LLM: ", sys.argv[1])
+            raise Exception("This LLM is not currently supported: ", sys.argv[1])
     else:
-        raise Exception("Usage: streamlit run app.py <anthropic|flanxl|flanxxl|openai|falcon40b|llama2|bedrock_titan|bedrock_claude|bedrock_claudev2>")
+        raise Exception("Usage: streamlit run app.py <openai>")
 
 if 'chat_history' not in st.session_state:
     st.session_state['chat_history'] = []
@@ -127,7 +99,7 @@ def write_top_bar():
             provider = PROVIDER_MAP[selected_provider]
         else:
             provider = selected_provider.capitalize()
-        header = f"An AI App powered by Amazon Kendra and {provider}!"
+        header = f"The Loka Assistant powered by Amazon Kendra and {provider}!"
         st.write(f"<h3 class='main-header'>{header}</h3>", unsafe_allow_html=True)
     with col3:
         clear = st.button("Clear Chat")
@@ -206,7 +178,8 @@ def render_sources(sources):
                 st.write(s)
 
     
-#Each answer will have context of the question asked in order to associate the provided feedback with the respective question
+#Each answer will have the context of the question asked to associate the 
+# provided feedback with the respective question
 def write_chat_message(md, q):
     chat = st.container()
     with chat:
@@ -220,4 +193,4 @@ with st.container():
     write_chat_message(a, q)
 
 st.markdown('---')
-input = st.text_input("You are talking to an AI, ask any question.", key="input", on_change=handle_input)
+input = st.text_input("You are talking to the Loka Assistant, ask any question related to the AWS SageMaker documentation.", key="input", on_change=handle_input)
