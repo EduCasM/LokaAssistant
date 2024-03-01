@@ -16,9 +16,10 @@ def build_chain():
   retriever = AmazonKendraRetriever(index_id=kendra_index_id, region_name=region)
 
   prompt_template = """
-  The following is a friendly conversation between a human and an AI. 
-  The AI is talkative and provides lots of specific details from its context.
-  If the AI does not know the answer to a question, it truthfully says it 
+  The following is a friendly conversation between a human and an AI Assistant. 
+  The AI assistant is talkative and provides lots of specific details from its context
+  (AWS SageMaker documentation).
+  If the assistant does not know the answer to a question, it truthfully says it 
   does not know.
   {context}
   Instruction: Based on the above documents, provide a detailed answer for, {question} Answer "don't know" 
@@ -29,7 +30,7 @@ def build_chain():
   )
 
   condense_qa_template = """
-  Given the following conversation and a follow up question, rephrase the follow up question 
+  Given the following conversation and a follow-up question, rephrase the follow-up question 
   to be a standalone question.
 
   Chat History:
